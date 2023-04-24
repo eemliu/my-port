@@ -5,6 +5,12 @@
 
 @layer components { 
   .navbar { 
-    @apply fixed top-0 w-screen h-20 m-0 flex flex-row bg-gray-200 text-white shadow-lg;
+    @apply fixed top-0 w-screen h-20 m-0 flex justify-between flex-row bg-gray-200 text-white shadow-lg;
+  }
+
+  .nav-tabs { 
+    @apply flex flex-row ml-3 mr-3 text-white py-1 border-b-2 transition-colors duration-300
+    hover:text-blue-500 
+    hover:cursor-pointer;
   }
 }

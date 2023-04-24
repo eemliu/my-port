@@ -4,24 +4,24 @@ import {
   Routes,
   Route,
 } from 'react-router-dom'
-// import { Context, initial } from './context';
 import Landing from './pages/Landing';
 import About from './pages/About';
+import { Context, initial } from './context.js';
 
 function App() {
-  // const [tester, setTester] = useState(initial.tester);
+  const [activeTab, setActiveTab] = useState(initial.activeTab);
 
-  // const getters = {
-  //   tester,
-  // }
+  const getters = {
+    activeTab,
+  }
 
-  // const setters = {
-  //   setTester,
-  // }
+  const setters = {
+    setActiveTab
+  }
 
   return (
    <div>
-    {/* <Context.Provider value={{ getters, setters }}> */}
+    <Context.Provider value={{ getters, setters }}>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Landing />} />
@@ -29,7 +29,7 @@ function App() {
         {/* <Route path='/signup' element={<SignUp />}></Route> */}
       </Routes>
     </BrowserRouter>
-    {/* </Context.Provider> */}
+    </Context.Provider>
    </div>
   );
 }
