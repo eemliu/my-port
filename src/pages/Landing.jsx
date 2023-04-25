@@ -3,12 +3,13 @@ import Navbar from '../components/Navbar'
 import { Context, useContext } from '../context';
 
 const Landing = () => {
+  const { getters, setters } = useContext(Context);
 
   return (
-    <div className='flex flex-col h-screen'>
+    <div className='default-page-styling'>
       <Navbar/>
         <h3>
-            bruh
+            this is my landing yay
         </h3>
     </div>
   )

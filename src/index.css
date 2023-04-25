@@ -5,12 +5,22 @@
 
 @layer components { 
   .navbar { 
-    @apply fixed top-0 w-screen h-20 m-0 flex justify-between flex-row bg-gray-200 text-white shadow-lg;
+    @apply flex flex-row fixed top-0 w-full h-20 m-0 pr-6 pt-1 justify-between  bg-lightFont dark:bg-bgColour2 shadow-md;
   }
 
   .nav-tabs { 
-    @apply flex flex-row ml-3 mr-3 text-white py-1 border-b-2 transition-colors duration-300
-    hover:text-blue-500 
+    @apply flex flex-row ml-3 mr-3
+    py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont
+    transition-colors duration-300
+    hover:text-teal-400 
     hover:cursor-pointer;
+  }
+
+  .display-mode {
+    @apply hover:cursor-pointer motion-safe:animate-bounce;
+  }
+
+  .default-page-styling { 
+    @apply flex flex-col pt-20 bg-lightbgColour dark:bg-bgColour1 h-screen;
   }
 }
