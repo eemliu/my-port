@@ -9,7 +9,6 @@ import { changeDisplay } from '../helpers';
 const Navbar = () => {
   const navigate = useNavigate();
   const { getters, setters } = useContext(Context);
-  const [effect, setEffect] = useState(false);
   const [activeTab, setActiveTab] = [getters.activeTab, setters.setActiveTab];
   const [isDarkMode, setIsDarkMode] = [getters.isDarkMode, setters.setIsDarkMode];
 
@@ -57,8 +56,7 @@ const Navbar = () => {
           className='display-mode'
           style={displayIconStyling}
           onClick={() => 
-            {changeDisplay(isDarkMode, setIsDarkMode)
-            setEffect(true)}
+            changeDisplay(isDarkMode, setIsDarkMode)
           }
           ></MdDarkMode>) : (<CiLight 
             className='display-mode'

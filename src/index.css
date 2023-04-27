@@ -12,12 +12,13 @@
     @apply flex flex-row ml-3 mr-3
     py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont
     transition-colors duration-300
-    hover:text-teal-400 
+    hover:text-teal-500 
+    dark:hover:text-teal-500 
     hover:cursor-pointer;
   }
 
   .display-mode {
-    @apply hover:cursor-pointer motion-safe:animate-bounce;
+    @apply hover:cursor-pointer;
   }
 
   .default-page-styling { 

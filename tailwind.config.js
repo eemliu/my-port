@@ -14,13 +14,26 @@ module.exports = {
         lightFont: '#FFFFFF',
       },
       keyframes: {
-        wiggle: {
-          "0%, 100%": { transform: "rotate(-3deg)" },
-          "50%": { transform: "rotate(3deg)" }
+        typing: {
+          "0%": {
+            width: "0%",
+            visibility: "hidden"
+          },
+          "100%": {
+            width: "100%"
+          }  
+        },
+        blink: {
+          "50%": {
+            borderColor: "transparent"
+          },
+          "100%": {
+            borderColor: "white"
+          }  
         }
       },
       animation: {
-        wiggle: "wiggle 200ms ease-in-out"
+        typing: "typing 2s steps(30) infinite alternate, blink 0.8s infinite"
       }
     },
   },
