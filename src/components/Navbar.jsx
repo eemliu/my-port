@@ -46,11 +46,10 @@ const Navbar = () => {
                 console.log(activeTab);
                 navigate(`/${tab.label}`)
               }}>
-              <h3>{tab.label}</h3>
+              <h3 className={`${idx === activeTab ? 'text-teal-500' : ''}`}>{tab.label}</h3>
               </div>
             )
           })}
-          
           <div>
             {isDarkMode ? (<MdDarkMode 
           className='display-mode'
