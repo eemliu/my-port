@@ -10,6 +10,7 @@ import About from './pages/About';
 import Projects from './pages/Projects.jsx';
 import Footer from './components/Footer.jsx';
 import Navbar from './components/Navbar.jsx';
+import Blog from './pages/Blog.jsx';
 
 function App() {
   const [activeTab, setActiveTab] = useState(initial.activeTab);
@@ -34,6 +35,7 @@ function App() {
         <Route path='/' element={<Landing />} />
         <Route path='/About' element={<About />} />
         <Route path='/Projects' element={<Projects />}></Route>
+        <Route path='/Blog' element={<Blog />}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

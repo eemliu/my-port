@@ -31,10 +31,10 @@ module.exports = {
           "100%": {
             borderColor: "white"
           }  
-        }
+        }    
       },
       animation: {
-        typing: "typing 2s steps(30) infinite alternate, blink 0.8s infinite"
+        typing: "typing 1s steps(10) infinite alternate, blink 0.5s infinite"
       }
     },
   },

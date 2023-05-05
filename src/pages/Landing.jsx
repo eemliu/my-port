@@ -1,16 +1,24 @@
 import React from 'react'
-import { Context, useContext } from '../context';
+// import { Context, useContext } from '../context';
 
 const Landing = () => {
-  const { getters, setters } = useContext(Context);
+  // const { getters, setters } = useContext(Context);
 
   return (
-    <div className='default-page-styling'>
-      <div className="flex min-h-screen items-center justify-start  p-10">
+    <div className='default-page-styling pt-[1em] pl-[15em]'>
+      <h1 className='text-[3em] dark:text-white transition-all duration-100'>Hi there! I'm</h1>
+      <div className="flex items-center justify-start">
         <div className="w-max">
-        <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-teal-500 pr-5 pb-3 text-6xl font-semibold text-darkFont dark:text-lightFont dark:border-r-lightFont">Hi there! I'm Emily </h1>
+        <h1 className="typing-text bg-teal-500  bg-opacity-20">Emily</h1>
         </div>
       </div>
+
+      {/* <div className="flex items-center justify-start">
+        <div className="w-max">
+        <h1 className="typing-text">Hi there! I'm <span className='bg-teal-500 bg-opacity-20'>Emily</span></h1>
+        </div>
+      </div> */}
+      <h1>yessur</h1>
     </div>
   )
 }
