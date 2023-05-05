@@ -23,21 +23,14 @@
   }
 
   .default-page-styling { 
-    @apply flex flex-col pt-20 bg-lightbgColour dark:bg-bgColour1 h-screen transition-colors duration-300
-    ;
+    @apply flex flex-col justify-center pt-[10em] bg-lightbgColour dark:bg-bgColour1 h-screen transition-colors duration-300 pl-10;
   }
 
   .footer {
-    @apply bottom-0 fixed bg-slate-400 h-[60px] w-screen;
+    @apply bottom-0 fixed bg-slate-400 h-[60px] w-[100%];
   }
 
-  .bubble-wrapper { 
-    @apply h-[100%] w-[100%] pointer-events-none;
+  .typing-text { 
+    @apply animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black pr-5 pb-3 text-6xl font-semibold text-darkFont dark:text-lightFont dark:border-r-lightFont text-[5em];
   }
-
-  .bubble { 
-    @apply h-[30vw] w-[30vw] bg-teal-500 rounded-full absolute left-[50%] top-[100%];
-  }
-
 }
-

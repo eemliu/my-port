@@ -12,7 +12,7 @@ const Navbar = () => {
   const [activeTab, setActiveTab] = [getters.activeTab, setters.setActiveTab];
   const [isDarkMode, setIsDarkMode] = [getters.isDarkMode, setters.setIsDarkMode];
 
-  const tabs = [{ label: 'About' }, { label: 'Projects' }];
+  const tabs = [{ label: 'About' }, { label: 'Projects' }, { label: 'Blog'}];
   const displayIconStyling = { 
     color: `${isDarkMode ? '#d69c29' : '#5487DE'}`,
     width: '2em',
