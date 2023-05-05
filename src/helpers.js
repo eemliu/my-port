@@ -13,3 +13,9 @@ export function changeDisplay(isDarkMode, setIsDarkMode) {
       console.log('cahnged to dark');
     }
 }
+
+export function initialiseDarkMode(isDarkMode, setIsDarkMode) {
+  localStorage.setItem('color-theme', 'dark');
+  setIsDarkMode(true);
+  document.documentElement.classList.add('dark');
+}

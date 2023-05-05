@@ -2,17 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components { 
   .navbar { 
-    @apply flex flex-row fixed top-0 w-full h-20 m-0 pr-6 pt-1 justify-between  bg-lightFont dark:bg-bgColour2 shadow-md;
+    @apply flex flex-row fixed top-0 w-full h-20 m-0 pr-6 pt-1 justify-between  bg-lightFont dark:bg-bgColour2 
+    transition-colors duration-300
+    shadow-md;
   }
 
   .nav-tabs { 
     @apply flex flex-row ml-3 mr-3
-    py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont
+    py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont 
     transition-colors duration-300
-    hover:text-teal-500 
+    hover:text-teal-500
     dark:hover:text-teal-500 
     hover:cursor-pointer;
   }
@@ -22,6 +23,21 @@
   }
 
   .default-page-styling { 
-    @apply flex flex-col pt-20 bg-lightbgColour dark:bg-bgColour1 h-screen;
+    @apply flex flex-col pt-20 bg-lightbgColour dark:bg-bgColour1 h-screen transition-colors duration-300
+    ;
   }
+
+  .footer {
+    @apply bottom-0 fixed bg-slate-400 h-[60px] w-screen;
+  }
+
+  .bubble-wrapper { 
+    @apply h-[100%] w-[100%] pointer-events-none;
+  }
+
+  .bubble { 
+    @apply h-[30vw] w-[30vw] bg-teal-500 rounded-full absolute left-[50%] top-[100%];
+  }
+
 }
+

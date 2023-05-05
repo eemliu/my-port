@@ -8,6 +8,8 @@ import { Context, initial } from './context.js';
 import Landing from './pages/Landing';
 import About from './pages/About';
 import Projects from './pages/Projects.jsx';
+import Footer from './components/Footer.jsx';
+import Navbar from './components/Navbar.jsx';
 
 function App() {
   const [activeTab, setActiveTab] = useState(initial.activeTab);
@@ -27,11 +29,13 @@ function App() {
    <div>
     <Context.Provider value={{ getters, setters }}>
     <BrowserRouter>
+      <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path='/About' element={<About />} />
         <Route path='/Projects' element={<Projects />}></Route>
       </Routes>
+      <Footer></Footer>
     </BrowserRouter>
     </Context.Provider>
    </div>
