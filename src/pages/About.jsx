@@ -2,9 +2,9 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
-        <h3>
-            About
+    <div className='default-page-styling'>
+        <h3 className='flex relative pt-3'>
+            about myself hehe
         </h3>
     </div>
   )
