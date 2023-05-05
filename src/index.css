@@ -2,9 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components { 
   .navbar { 
-    @apply fixed top-0 w-screen h-20 m-0 flex flex-row bg-gray-200 text-white shadow-lg;
+    @apply flex flex-row fixed top-0 w-full h-20 m-0 pr-6 pt-1 justify-between  bg-lightFont dark:bg-bgColour2 
+    transition-colors duration-300
+    shadow-md;
+  }
+
+  .nav-tabs { 
+    @apply flex flex-row ml-3 mr-3
+    py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont 
+    transition-colors duration-300
+    hover:text-teal-500
+    dark:hover:text-teal-500 
+    hover:cursor-pointer;
+  }
+
+  .display-mode {
+    @apply hover:cursor-pointer;
+  }
+
+  .default-page-styling { 
+    @apply flex flex-col justify-center pt-[10em] bg-lightbgColour dark:bg-bgColour1 h-screen transition-colors duration-300 pl-10;
+  }
+
+  .footer {
+    @apply bottom-0 fixed bg-slate-400 h-[60px] w-[100%];
+  }
+
+  .typing-text { 
+    @apply animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black pr-5 pb-3 text-6xl font-semibold text-darkFont dark:text-lightFont dark:border-r-lightFont text-[5em];
   }
 }

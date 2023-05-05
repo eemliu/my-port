@@ -1,13 +1,24 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+// import { Context, useContext } from '../context';
 
 const Landing = () => {
+  // const { getters, setters } = useContext(Context);
+
   return (
-    <div className='flex flex-col h-screen'>
-      <Navbar/>
-        <h3>
-            bruh
-        </h3>
+    <div className='default-page-styling pt-[1em] pl-[15em]'>
+      <h1 className='text-[3em] dark:text-white transition-all duration-100'>Hi there! I'm</h1>
+      <div className="flex items-center justify-start">
+        <div className="w-max">
+        <h1 className="typing-text bg-teal-500  bg-opacity-20">Emily</h1>
+        </div>
+      </div>
+
+      {/* <div className="flex items-center justify-start">
+        <div className="w-max">
+        <h1 className="typing-text">Hi there! I'm <span className='bg-teal-500 bg-opacity-20'>Emily</span></h1>
+        </div>
+      </div> */}
+      <h1>yessur</h1>
     </div>
   )
 }
