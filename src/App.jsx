@@ -8,7 +8,6 @@ import { Context, initial } from './context.js';
 import Landing from './pages/Landing';
 import About from './pages/About';
 import Projects from './pages/Projects.jsx';
-import Footer from './components/Footer.jsx';
 import Navbar from './components/Navbar.jsx';
 import Blog from './pages/Blog.jsx';
 
@@ -37,7 +36,6 @@ function App() {
         <Route path='/Projects' element={<Projects />}></Route>
         <Route path='/Blog' element={<Blog />}></Route>
       </Routes>
-      <Footer></Footer>
     </BrowserRouter>
     </Context.Provider>
    </div>

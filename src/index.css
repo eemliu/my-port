@@ -4,14 +4,19 @@
 
 @layer components { 
   .navbar { 
-    @apply flex flex-row fixed top-0 w-full h-20 m-0 pr-6 pt-1 justify-between bg-lightbgColour dark:bg-bgColour2 
+    @apply 
+    flex flex-row fixed justify-between
+    top-0 w-full h-20 
+    m-0 pr-6 pt-1  
+    bg-lightbgColour dark:bg-bgColour2
     transition-colors duration-300
-    shadow-md;
+    shadow-md
+    tablet:hidden;
   }
 
   .nav-tabs { 
     @apply flex flex-row ml-3 mr-3
-    py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont 
+    py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont1 
     transition-colors duration-300
     hover:text-teal-500
     dark:hover:text-teal-500 
@@ -23,7 +28,9 @@
   }
 
   .default-page-styling { 
-    @apply flex flex-col justify-center items-center bg-lightbgColour dark:bg-bgColour1 h-screen transition-colors duration-300;
+    @apply flex flex-col justify-center items-center 
+    laptop:pt-10 tablet:pt-0
+    bg-lightbgColour dark:bg-bgColour1 h-screen transition-colors duration-300;
   }
 
   .footer {
@@ -31,6 +38,69 @@
   }
 
   .typing-text { 
-    @apply animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black pr-5 pb-3 text-6xl font-semibold text-darkFont dark:text-lightFont dark:border-r-lightFont text-[8em];
+    @apply animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black pb-3 text-6xl font-semibold text-[darkFont] dark:text-[#CCD6F6] dark:border-r-lightFont1 text-[8em] tracking-wide bg-teal-500 
+    bg-opacity-20 dark:bg-opacity-80
+    tablet:text-[7em] tablet:justify-center;
   }
+
+  .landing-layout { 
+    @apply flex flex-col laptop:justify-start laptop:ml-[10em] laptop:mr-[7em] 
+    tablet:justify-center tablet:items-end tablet:mr-[30%] tablet:ml-[30%];
+  }
+
+  .landing-header { 
+    @apply w-[100%] flex 
+    tablet:justify-center
+    tablet:text-[2.5em] 
+    laptop:text-[3em] 
+    dark:text-[#CCD6F6] transition-all 
+    duration-100 
+    font-light;
+  }
+
+  .landing-subHeader {
+    @apply 
+    w-[100%] 
+    mt-[1em] mb-[1em] 
+    dark:text-lightFont2 text-darkFont2 text-opacity-70 text-[1.5em] 
+    tablet:justify-center
+    tablet:items-center
+    tablet:text-center
+    tablet:text-[1.2em];
+  }
+
+  .landing-body { 
+    @apply 
+    mb-[1em] font-light
+    dark:text-lightFont2 text-darkFont2
+    text-opacity-70 text-[1.3em]
+    tablet:text-center 
+    tablet:text-[1.1em]
+    laptop:w-[60%];
+  }
+}
+
+span {
+  color: #18272F;
+  position: relative;
+  z-index: 1;
+  font-weight: 450;
+  cursor: pointer;
+}
+
+span::before {
+  content: '';
+  background-color: rgb(20, 184, 166, 0.3);
+  position: absolute;
+  left: 0;
+  bottom: 0.07rem;
+  width: 100%;
+  height: 0.3rem;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+span:hover::before {
+  bottom: 0;
+  height: 100%;
 }
