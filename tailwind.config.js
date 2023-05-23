@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
+  variants: {
+    animation: ["motion-safe"]
+  },
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -39,10 +42,15 @@ module.exports = {
           "100%": {
             borderColor: "white"
           }  
-        }    
+        },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 }
+        },
       },
       animation: {
-        typing: "typing 1.1s steps(11, end), blink 0.7s infinite step-end"
+        typing: "typing 1.1s steps(11, end), blink 0.7s infinite step-end",
+        fadeIn: "fadeIn 0.5s ease-in forwards",
       }
     },
   },

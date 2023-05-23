@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components { 
-  .navbar { 
+  .navbar-desktop { 
     @apply 
     flex flex-row fixed justify-between
     top-0 w-full h-20 
@@ -11,7 +11,7 @@
     bg-lightbgColour dark:bg-bgColour2
     transition-colors duration-300
     shadow-md
-    tablet:hidden;
+    z-10;
   }
 
   .nav-tabs { 
@@ -28,13 +28,16 @@
   }
 
   .default-page-styling { 
-    @apply flex flex-col justify-center items-center 
-    laptop:pt-10 tablet:pt-0
-    bg-lightbgColour dark:bg-bgColour1 h-screen transition-colors duration-300;
+    @apply 
+    flex flex-col 
+    items-center 
+    laptop:pt-[12em] tablet:pt-[9em]
+    bg-lightbgColour dark:bg-bgColour1 transition-colors duration-300
+    ;
   }
 
   .footer {
-    @apply bottom-0 fixed bg-lightbgColour dark:bg-bgColour2 h-[60px] w-[100%] shadow-inner;
+    @apply bottom-0 relative bg-lightbgColour dark:bg-bgColour2 h-[60px] w-[100%] shadow-inner;
   }
 
   .typing-text { 
@@ -44,7 +47,8 @@
   }
 
   .landing-layout { 
-    @apply flex flex-col laptop:justify-start laptop:ml-[10em] laptop:mr-[7em] 
+    @apply flex flex-col
+    laptop:justify-start laptop:ml-[15em] laptop:mr-[10em] 
     tablet:justify-center tablet:items-end tablet:mr-[30%] tablet:ml-[30%];
   }
 
@@ -78,9 +82,15 @@
     tablet:text-[1.1em]
     laptop:w-[60%];
   }
+
+  .get-in-touch-buttons { 
+    @apply dark:text-lightFont2 text-darkFont2 w-[10em] 
+    hover:text-primary dark:hover:text-primary 
+    transition-all duration-300;
+  }
 }
 
-span {
+.link-decor {
   color: #18272F;
   position: relative;
   z-index: 1;
@@ -88,7 +98,7 @@ span {
   cursor: pointer;
 }
 
-span::before {
+.link-decor::before {
   content: '';
   background-color: rgb(20, 184, 166, 0.3);
   position: absolute;
@@ -100,7 +110,7 @@ span::before {
   transition: all .3s ease-in-out;
 }
 
-span:hover::before {
+.link-decor:hover::before {
   bottom: 0;
   height: 100%;
 }

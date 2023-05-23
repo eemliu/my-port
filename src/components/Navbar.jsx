@@ -24,7 +24,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className='navbar'>
+    <div className='navbar-desktop navbar-tablet'>
         <div>
           <img 
           src={titleIcon} 
@@ -43,7 +43,7 @@ const Navbar = () => {
             return (
               <div 
               key={idx}
-              className={`nav-tabs ${idx === activeTab ? 'border-teal-500' : 'border-transparent hover:border-gray-20'}`}
+              className={`tablet:hidden nav-tabs ${idx === activeTab ? 'border-teal-500' : 'border-transparent hover:border-gray-20'}`}
               onClick={() => {
                 setActiveTab(idx)
                 console.log(idx);
