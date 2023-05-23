@@ -27,13 +27,16 @@
     @apply hover:cursor-pointer;
   }
 
+  .blob-monster { 
+    @apply flex fixed mr-0 top-[30em] 
+  } 
+
   .default-page-styling { 
     @apply 
     flex flex-col 
     items-center 
     laptop:pt-[12em] tablet:pt-[9em]
-    bg-lightbgColour dark:bg-bgColour1 transition-colors duration-300
-    ;
+    bg-lightbgColour dark:bg-bgColour1 transition-colors duration-300;
   }
 
   .footer {
@@ -83,11 +86,28 @@
     laptop:w-[60%];
   }
 
+  .get-in-touch {
+    @apply 
+    w-[100%] 
+    tablet:mb-[1em] 
+    laptop:mb-[0.5em]
+    dark:text-lightFont2 text-darkFont2 text-opacity-70 text-[1.7em] 
+    tablet:justify-center
+    tablet:items-center
+    tablet:text-center
+    tablet:text-[1.4em]
+    hover:text-primary
+    hover:cursor-pointer
+    dark:hover:text-primary;
+  }
+
   .get-in-touch-buttons { 
     @apply dark:text-lightFont2 text-darkFont2 w-[10em] 
     hover:text-primary dark:hover:text-primary 
     transition-all duration-300;
   }
+
+
 }
 
 .link-decor {

@@ -18,7 +18,7 @@ module.exports = {
       colors: { 
         bgColour1: '#0A1930', 
         bgColour2: '#0B1B36', 
-        lightbgColour:'#FFFFFF',
+        lightbgColour:'#FAFDFF',
         darkFont: '#001220',
         lightFont1: '#CCD6F6',
         lightFont2: '#8892AF',
