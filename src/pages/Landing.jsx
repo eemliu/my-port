@@ -29,9 +29,9 @@ const Landing = () => {
   
   return (
     <div className='default-page-styling'>
-      <div className='tablet:hidden'>
-        <img classname='blob-monster' src={blob} alt="" />
-      </div>
+      {/* <div className='tablet:hidden'>
+        <img className='blob-monster' src={blob} alt="" />
+      </div> */}
 
       <div className='landing-layout'>
         <h1 className=' landing-header show-on-scroll'>

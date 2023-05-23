@@ -27,9 +27,9 @@
     @apply hover:cursor-pointer;
   }
 
-  .blob-monster { 
+  /* .blob-monster { 
     @apply flex fixed mr-0 top-[30em] 
-  } 
+  }  */
 
   .default-page-styling { 
     @apply 
