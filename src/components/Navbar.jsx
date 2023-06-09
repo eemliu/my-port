@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react'
+import { React, useEffect } from 'react'
 import titleIcon from '../assets/title-icon.png'
 import { useNavigate } from 'react-router'
 import { Context, useContext } from '../context';
@@ -15,8 +15,6 @@ const Navbar = () => {
   const tabs = [{ label: 'About' }, { label: 'Projects' }, { label: 'Blog'}];
   const displayIconStyling = { 
     color: `${isDarkMode ? '#d69c29' : '#5487DE'}`,
-    width: '2em',
-    height: '1.5em',
   }
 
   useEffect(() => { 
@@ -41,21 +39,24 @@ const Navbar = () => {
         <div className='flex flex-row justify-center mr-3 items-center'>
           {tabs.map((tab, idx) => { 
             return (
-              <div 
+              <a 
               key={idx}
               className={`tablet:hidden nav-tabs ${idx === activeTab ? 'border-teal-500' : 'border-transparent hover:border-gray-20'}`}
               onClick={() => {
                 setActiveTab(idx)
                 console.log(idx);
                 console.log(activeTab);
-                navigate(`/${tab.label}`)
-              }}>
+                console.log(tab.label);
+                // navigate(`/${tab.label}`)
+              }}
+              href={`#${tab.label}`}
+              >
               <h3 className={`${idx === activeTab ? 'text-teal-500' : ''}`}>{tab.label}</h3>
-              </div>
+              </a>
             )
           })}
 
-          <div className='hover:bg-slate-400 hover:bg-opacity-20 pr-[0.2em] pt-[0.3em] pl-[0.2em] pb-[0.62em] rounded-full justify-center transition-all duration-100 hover:cursor-pointer'
+          <div className='mode-hover'
           onClick={() => 
             changeDisplay(isDarkMode, setIsDarkMode)
           }
@@ -63,9 +64,11 @@ const Navbar = () => {
             {isDarkMode ? (
             <CiLight 
             style={displayIconStyling}
+            className='mode-icon'
             ></CiLight>
           ) : (<MdDarkMode
             style={displayIconStyling}
+            className='mode-icon'
             ></MdDarkMode>)}
           </div>
         </div>

@@ -20,16 +20,22 @@
     transition-colors duration-300
     hover:text-teal-500
     dark:hover:text-teal-500 
+    hover:cursor-pointer
+    laptop:text-[1.2em];
+  }
+
+  .mode-hover {
+    @apply 
+    pr-[0.2em] pt-[0.3em] pl-[0.2em] pb-[0.62em]
+    rounded-full justify-center 
+    transition-all duration-100 
+    hover:bg-slate-400 hover:bg-opacity-20 
     hover:cursor-pointer;
-  }
+    }
 
-  .display-mode {
-    @apply hover:cursor-pointer;
-  }
-
-  /* .blob-monster { 
-    @apply flex fixed mr-0 top-[30em] 
-  }  */
+    .mode-icon { 
+      @apply w-[3em] h-[2em];
+    }
 
   .default-page-styling { 
     @apply 
@@ -44,7 +50,15 @@
   }
 
   .typing-text { 
-    @apply animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black pb-3 text-6xl font-semibold text-[darkFont] dark:text-[#CCD6F6] dark:border-r-lightFont1 text-[8em] tracking-wide bg-teal-500 
+    @apply 
+    animate-typing 
+    overflow-hidden m-auto whitespace-nowrap 
+    border-r-4 border-r-black 
+    pb-3 font-semibold 
+    text-[darkFont] leading-[1.05em] text-[10em] 
+    tracking-wide 
+    bg-teal-500 
+    dark:text-lightFont1 dark:border-r-lightFont1
     bg-opacity-20 dark:bg-opacity-80
     tablet:text-[7em] tablet:justify-center;
   }
@@ -107,6 +121,33 @@
     transition-all duration-300;
   }
 
+  .buttons-container { 
+    @apply flex flex-row space-x-2 laptop:justify-start tablet:justify-center tablet:w-[100%] laptop:mb-[5em] tablet:mb-[3em];
+  }
+
+  .about-section { 
+    @apply 
+    flex flex-col 
+    mb-[1em];
+  }
+
+  .about-header { 
+    @apply animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium tablet:text-[3em] laptop:text-[4em] tablet:text-center;
+  }
+
+  .about-body { 
+    @apply 
+    flex tablet:flex-col laptop:flex-col desktop:flex-row
+    mt-[0.5em] dark:text-lightFont2 text-darkFont2 tablet:text-center tablet:items-center laptop:text-[1.3em];
+  }
+
+  .projects-section { 
+    @apply mb-[1em];
+  }
+
+  .blog-section { 
+    @apply mb-[1em];
+  }
 
 }
 
@@ -133,4 +174,33 @@
 .link-decor:hover::before {
   bottom: 0;
   height: 100%;
+}
+
+.animate-character
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #14B8A6 0%,
+    #23E7D0 29%,
+    #316ED8 67%,
+    #7CA2E6 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }

@@ -9,10 +9,9 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'tablet': {'min':'0px', 'max': '700px'},
-      'laptop': '700px',
-      // 'laptop': {'min':'700px', 'max': '1280px'},
-      // 'desktop': {'min':'1280px', 'max': '5000px'},
+      'tablet': {'min':'0px', 'max': '800px'},
+      'laptop': '800px',
+      'desktop':'1000px'
     },
     extend: {
       colors: { 
