@@ -68,7 +68,7 @@ const Landing = () => {
             </a>
           </div>
         </section>
-        <h1>yurusdfsd</h1>
+        <h1>sdf</h1>
         <section className='about-section show-on-scroll' id='About'>
           <h1 className='about-header'>/ about-me</h1>
           <div className='about-body'>
