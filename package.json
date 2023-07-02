@@ -1,9 +1,8 @@
 {
   "name": "my-port",
   "version": "0.1.0",
-  "homepage": "https://eemliu.github.io/my-port",
+  "homepage": "https://emliu.me",
   "private": true,
-  "homepage": "https://emliu.me/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -56,5 +55,4 @@
     "gh-pages": "^5.0.0",
     "tailwindcss": "^3.3.1"
   }
-  
 }

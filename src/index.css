@@ -160,7 +160,7 @@
     tablet:flex-col
     laptop:flex-col
     desktop:grid
-    desktop:grid-cols-3
+    desktop:grid-cols-2
     desktop:gap-5
     tablet:w-[100%];
   }

@@ -8,6 +8,7 @@ import blob from '../assets/blobs-1.png'
 import portrait from '../assets/photo.jpeg'
 import ProjectCard from '../components/ProjectCard';
 import weemi from '../assets/weemi.png'
+import travel from '../assets/travel.png'
 
 const Landing = () => {
   const callback = function (entries) {
@@ -67,7 +68,7 @@ const Landing = () => {
             </a>
           </div>
         </section>
-
+        <h1>what</h1>
         <section className='about-section show-on-scroll' id='About'>
           <h1 className='about-header'>/ about-me</h1>
           <div className='about-body'>
@@ -87,8 +88,10 @@ const Landing = () => {
         <section className='projects-section  show-on-scroll' id='Projects'>
           <h1 className='animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium tablet:text-[3em] laptop:text-[4em] tablet:text-center'>/ projects</h1>
           <div className='proj-body'>
-            <ProjectCard source={weemi} header='Weemi'></ProjectCard>
-            <ProjectCard></ProjectCard>
+            <ProjectCard source={weemi} header='Weemi'/>
+            <ProjectCard source={travel} header='TravelConnect'/>
+            <ProjectCard/>
+            <ProjectCard/>
 
           </div>
           <p className='mt-[0.5em] dark:text-lightFont2 text-darkFont2 tablet:text-center laptop:text-[1.3em]'>
