@@ -69,6 +69,11 @@
     tablet:justify-center tablet:items-end tablet:mr-[30%] tablet:ml-[30%];
   }
 
+  .landing-section { 
+    @apply
+    scroll-m-[12rem];
+  }
+
   .landing-header { 
     @apply w-[100%] flex 
     tablet:justify-center
@@ -128,6 +133,7 @@
   .about-section { 
     @apply 
     flex flex-col 
+    scroll-m-[5rem]
     mb-[1em];
   }
 
@@ -142,11 +148,56 @@
   }
 
   .projects-section { 
-    @apply mb-[1em];
+    @apply 
+    mb-[1em]
+    flex flex-col
+    scroll-m-[5rem];
+  }
+
+  .proj-body { 
+    @apply  
+    flex
+    tablet:flex-col
+    laptop:flex-col
+    desktop:grid
+    desktop:grid-cols-3
+    desktop:gap-5
+    tablet:w-[100%];
+  }
+
+  .proj-card { 
+    @apply 
+    flex flex-col
+    w-[100%]
+    bg-slate-300
+    mt-[1vh]
+    mb-[2vh]
+    rounded-3xl
+    tablet:h-[30vh]
+    laptop:h-[35vh]
+    desktop:h-[40vh]
+    hover:cursor-pointer
+    -z-10
+    ;
+  }
+
+  .proj-card-img { 
+    @apply 
+    w-[100%]
+    rounded-3xl
+    z-10
+  }
+
+  .proj-card-header { 
+    @apply 
+    ml-[3vw] mr-[3vw]
+    mt-[3vh]
   }
 
   .blog-section { 
-    @apply mb-[1em];
+    @apply 
+    mb-[1em]
+    scroll-m-[5rem];
   }
 
 }

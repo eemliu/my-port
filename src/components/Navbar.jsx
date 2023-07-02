@@ -24,16 +24,19 @@ const Navbar = () => {
   return (
     <div className='navbar-desktop navbar-tablet'>
         <div>
-          <img 
-          src={titleIcon} 
-          className=' hover:cursor-pointer 
-          mt-3 ml-5 w-12 hover:w-15'
-          alt="title-icon"
-          onClick={() => {
-            navigate('/')
-            setActiveTab('')
-          }}
-          />
+
+          <a href="#Home">
+            <img
+            src={titleIcon}
+            className=' hover:cursor-pointer
+            mt-3 ml-5 w-12 hover:w-15'
+            alt="title-icon"
+            // onClick={() => {
+            //   // navigate('/')
+            //   setActiveTab('')
+            // }}
+            />
+          </a>
         </div>
         
         <div className='flex flex-row justify-center mr-3 items-center'>
@@ -49,8 +52,7 @@ const Navbar = () => {
                 console.log(tab.label);
                 // navigate(`/${tab.label}`)
               }}
-              href={`#${tab.label}`}
-              >
+              href={`#${tab.label}`}>
               <h3 className={`${idx === activeTab ? 'text-teal-500' : ''}`}>{tab.label}</h3>
               </a>
             )

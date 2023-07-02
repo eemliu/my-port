@@ -31,12 +31,13 @@ function App() {
     <Context.Provider value={{ getters, setters }}>
     <BrowserRouter>
       <Navbar></Navbar>
-      <Routes>
-        <Route path='/' element={<Landing />} />
+      <Landing></Landing>
+      {/* <Routes> */}
+        {/* <Route path='/' element={<Landing />} /> */}
         {/* <Route path='/About' element={<About />} />
         <Route path='/Projects' element={<Projects />}></Route>
         <Route path='/Blog' element={<Blog />}></Route> */}
-      </Routes>
+      {/* </Routes> */}
       <Footer></Footer>
     </BrowserRouter>
     </Context.Provider>

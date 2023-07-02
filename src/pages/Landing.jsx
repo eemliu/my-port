@@ -6,6 +6,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import IconButton from '@mui/material/IconButton';
 import blob from '../assets/blobs-1.png'
 import portrait from '../assets/photo.jpeg'
+import ProjectCard from '../components/ProjectCard';
+import weemi from '../assets/weemi.png'
 
 const Landing = () => {
   const callback = function (entries) {
@@ -27,12 +29,12 @@ const Landing = () => {
     target.classList.add("opacity-0");
     observer.observe(target);
   });
+      console.log('yur');
   
   return (
     <div className='default-page-styling'>
-
       <div className='landing-layout'>
-        <section className='landing-section show-on-scroll'>
+        <section className='landing-section show-on-scroll' id='Home'>
           <h1 className='landing-header'>
             Hi there! I'm</h1>
           <div className="flex items-center justify-start tablet:justify-center w-[100%] show-on-scroll">
@@ -66,7 +68,7 @@ const Landing = () => {
           </div>
         </section>
 
-        <section className='about-section show-on-scroll scroll-m-[5rem]' id='About'>
+        <section className='about-section show-on-scroll' id='About'>
           <h1 className='about-header'>/ about-me</h1>
           <div className='about-body'>
             <p>
@@ -82,8 +84,13 @@ const Landing = () => {
           </div>
         </section>
 
-        <section className='projects-section flex flex-col show-on-scroll' id='Projects'>
+        <section className='projects-section  show-on-scroll' id='Projects'>
           <h1 className='animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium tablet:text-[3em] laptop:text-[4em] tablet:text-center'>/ projects</h1>
+          <div className='proj-body'>
+            <ProjectCard source={weemi} header='Weemi'></ProjectCard>
+            <ProjectCard></ProjectCard>
+
+          </div>
           <p className='mt-[0.5em] dark:text-lightFont2 text-darkFont2 tablet:text-center laptop:text-[1.3em]'>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum asperiores nobis illum placeat temporibus quas natus, at beatae voluptas corporis, minus optio eaque commodi eos. Sit labore impedit dolorum placeat?
           </p>
