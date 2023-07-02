@@ -1,18 +1,28 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  important: true,
   darkMode: 'class',
+  variants: {
+    animation: ["motion-safe"]
+  },
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'tablet': {'min':'0px', 'max': '800px'},
+      'laptop': '800px',
+      'desktop':'1000px'
+    },
     extend: {
       colors: { 
-        bgColour1: '#222220', 
-        bgColour2: '#353532', 
-        lightbgColour:'#FFFFFF',
+        bgColour1: '#0A1930', 
+        bgColour2: '#0B1B36', 
+        lightbgColour:'#FAFDFF',
         darkFont: '#001220',
-        lightFont: '#FFFFFF',
+        lightFont1: '#CCD6F6',
+        lightFont2: '#8892AF',
+        darkFont2: '#435E6E',
+        primary: '#14B8A6'
       },
       keyframes: {
         typing: {
@@ -31,10 +41,15 @@ module.exports = {
           "100%": {
             borderColor: "white"
           }  
-        }    
+        },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 }
+        },
       },
       animation: {
-        typing: "typing 1s steps(10) infinite alternate, blink 0.5s infinite"
+        typing: "typing 1.1s steps(11, end), blink 0.7s infinite step-end",
+        fadeIn: "fadeIn 0.5s ease-in forwards",
       }
     },
   },

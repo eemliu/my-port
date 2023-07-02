@@ -3,34 +3,255 @@
 @tailwind utilities;
 
 @layer components { 
-  .navbar { 
-    @apply flex flex-row fixed top-0 w-full h-20 m-0 pr-6 pt-1 justify-between  bg-lightFont dark:bg-bgColour2 
+  .navbar-desktop { 
+    @apply 
+    flex flex-row fixed justify-between
+    top-0 w-full h-20 
+    m-0 pr-6 pt-1  
+    bg-lightbgColour dark:bg-bgColour2
     transition-colors duration-300
-    shadow-md;
+    shadow-md
+    z-10;
   }
 
   .nav-tabs { 
     @apply flex flex-row ml-3 mr-3
-    py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont 
+    py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont1 
     transition-colors duration-300
     hover:text-teal-500
     dark:hover:text-teal-500 
-    hover:cursor-pointer;
+    hover:cursor-pointer
+    laptop:text-[1.2em];
   }
 
-  .display-mode {
-    @apply hover:cursor-pointer;
-  }
+  .mode-hover {
+    @apply 
+    pr-[0.2em] pt-[0.3em] pl-[0.2em] pb-[0.62em]
+    rounded-full justify-center 
+    transition-all duration-100 
+    hover:bg-slate-400 hover:bg-opacity-20 
+    hover:cursor-pointer;
+    }
+
+    .mode-icon { 
+      @apply w-[3em] h-[2em];
+    }
 
   .default-page-styling { 
-    @apply flex flex-col justify-center pt-[10em] bg-lightbgColour dark:bg-bgColour1 h-screen transition-colors duration-300 pl-10;
+    @apply 
+    flex flex-col 
+    items-center 
+    laptop:pt-[12em] tablet:pt-[9em]
+    bg-lightbgColour dark:bg-bgColour1 transition-colors duration-300;
   }
 
   .footer {
-    @apply bottom-0 fixed bg-slate-400 h-[60px] w-[100%];
+    @apply bottom-0 relative bg-lightbgColour dark:bg-bgColour2 h-[60px] w-[100%] shadow-inner;
   }
 
   .typing-text { 
-    @apply animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black pr-5 pb-3 text-6xl font-semibold text-darkFont dark:text-lightFont dark:border-r-lightFont text-[5em];
+    @apply 
+    animate-typing 
+    overflow-hidden m-auto whitespace-nowrap 
+    border-r-4 border-r-black 
+    pb-3 font-semibold 
+    text-[darkFont] leading-[1.05em] text-[10em] 
+    tracking-wide 
+    bg-teal-500 
+    dark:text-lightFont1 dark:border-r-lightFont1
+    bg-opacity-20 dark:bg-opacity-80
+    tablet:text-[7em] tablet:justify-center;
+  }
+
+  .landing-layout { 
+    @apply flex flex-col
+    laptop:justify-start laptop:ml-[15em] laptop:mr-[10em] 
+    tablet:justify-center tablet:items-end tablet:mr-[30%] tablet:ml-[30%];
+  }
+
+  .landing-section { 
+    @apply
+    scroll-m-[12rem];
+  }
+
+  .landing-header { 
+    @apply w-[100%] flex 
+    tablet:justify-center
+    tablet:text-[2.5em] 
+    laptop:text-[3em] 
+    dark:text-[#CCD6F6] transition-all 
+    duration-100 
+    font-light;
+  }
+
+  .landing-subHeader {
+    @apply 
+    w-[100%] 
+    mt-[1em] mb-[1em] 
+    dark:text-lightFont2 text-darkFont2 text-opacity-70 text-[1.5em] 
+    tablet:justify-center
+    tablet:items-center
+    tablet:text-center
+    tablet:text-[1.2em];
+  }
+
+  .landing-body { 
+    @apply 
+    mb-[1em] font-light
+    dark:text-lightFont2 text-darkFont2
+    text-opacity-70 text-[1.3em]
+    tablet:text-center 
+    tablet:text-[1.1em]
+    laptop:w-[60%];
+  }
+
+  .get-in-touch {
+    @apply 
+    w-[100%] 
+    tablet:mb-[1em] 
+    laptop:mb-[0.5em]
+    dark:text-lightFont2 text-darkFont2 text-opacity-70 text-[1.7em] 
+    tablet:justify-center
+    tablet:items-center
+    tablet:text-center
+    tablet:text-[1.4em]
+    hover:text-primary
+    hover:cursor-pointer
+    dark:hover:text-primary;
+  }
+
+  .get-in-touch-buttons { 
+    @apply dark:text-lightFont2 text-darkFont2 w-[10em] 
+    hover:text-primary dark:hover:text-primary 
+    transition-all duration-300;
+  }
+
+  .buttons-container { 
+    @apply flex flex-row space-x-2 laptop:justify-start tablet:justify-center tablet:w-[100%] laptop:mb-[5em] tablet:mb-[3em];
+  }
+
+  .about-section { 
+    @apply 
+    flex flex-col 
+    scroll-m-[5rem]
+    mb-[1em];
+  }
+
+  .about-header { 
+    @apply animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium tablet:text-[3em] laptop:text-[4em] tablet:text-center;
+  }
+
+  .about-body { 
+    @apply 
+    flex tablet:flex-col laptop:flex-col desktop:flex-row
+    mt-[0.5em] dark:text-lightFont2 text-darkFont2 tablet:text-center tablet:items-center laptop:text-[1.3em];
+  }
+
+  .projects-section { 
+    @apply 
+    mb-[1em]
+    flex flex-col
+    scroll-m-[5rem];
+  }
+
+  .proj-body { 
+    @apply  
+    flex
+    tablet:flex-col
+    laptop:flex-col
+    desktop:grid
+    desktop:grid-cols-3
+    desktop:gap-5
+    tablet:w-[100%];
+  }
+
+  .proj-card { 
+    @apply 
+    flex flex-col
+    w-[100%]
+    bg-slate-300
+    mt-[1vh]
+    mb-[2vh]
+    rounded-3xl
+    tablet:h-[30vh]
+    laptop:h-[35vh]
+    desktop:h-[40vh]
+    hover:cursor-pointer
+    -z-10
+    ;
+  }
+
+  .proj-card-img { 
+    @apply 
+    w-[100%]
+    rounded-3xl
+    z-10
+  }
+
+  .proj-card-header { 
+    @apply 
+    ml-[3vw] mr-[3vw]
+    mt-[3vh]
+  }
+
+  .blog-section { 
+    @apply 
+    mb-[1em]
+    scroll-m-[5rem];
+  }
+
+}
+
+.link-decor {
+  color: #18272F;
+  position: relative;
+  z-index: 1;
+  font-weight: 450;
+  cursor: pointer;
+}
+
+.link-decor::before {
+  content: '';
+  background-color: rgb(20, 184, 166, 0.3);
+  position: absolute;
+  left: 0;
+  bottom: 0.07rem;
+  width: 100%;
+  height: 0.3rem;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.link-decor:hover::before {
+  bottom: 0;
+  height: 100%;
+}
+
+.animate-character
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #14B8A6 0%,
+    #23E7D0 29%,
+    #316ED8 67%,
+    #7CA2E6 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
   }
 }
