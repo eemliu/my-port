@@ -45,10 +45,6 @@
     bg-lightbgColour dark:bg-bgColour1 transition-colors duration-300;
   }
 
-  .footer {
-    @apply bottom-0 relative bg-lightbgColour dark:bg-bgColour2 h-[60px] w-[100%] shadow-inner;
-  }
-
   .typing-text { 
     @apply 
     animate-typing 
@@ -65,8 +61,8 @@
 
   .landing-layout { 
     @apply flex flex-col
-    laptop:justify-start laptop:ml-[15em] laptop:mr-[10em] 
-    tablet:justify-center tablet:items-end tablet:mr-[30%] tablet:ml-[30%];
+    laptop:justify-start laptop:ml-[15%] laptop:mr-[20%] 
+    tablet:justify-center tablet:items-end tablet:mr-[20%] tablet:ml-[20%];
   }
 
   .landing-section { 
@@ -95,6 +91,22 @@
     tablet:text-[1.2em];
   }
 
+  .landing-subHeader-hover {
+    @apply 
+    hover:bg-secondaryBlue
+    hover:h-[10em]
+    hover:bg-opacity-40 
+    hover:rounded-lg
+    hover:pr-[0.5rem]
+    hover:pl-[0.5rem]
+    hover:pt-[0.5rem]
+    hover:pb-[0.5rem]
+    hover:text-[#3F78DA]
+    dark:hover:text-[#7FA5E6]
+    transition-all
+    duration-150;
+  }
+
   .landing-body { 
     @apply 
     mb-[1em] font-light
@@ -108,7 +120,7 @@
   .get-in-touch {
     @apply 
     w-[100%] 
-    tablet:mb-[1em] 
+    tablet:mb-[0.5em] 
     laptop:mb-[0.5em]
     dark:text-lightFont2 text-darkFont2 text-opacity-70 text-[1.7em] 
     tablet:justify-center
@@ -127,7 +139,8 @@
   }
 
   .buttons-container { 
-    @apply flex flex-row space-x-2 laptop:justify-start tablet:justify-center tablet:w-[100%] laptop:mb-[5em] tablet:mb-[3em];
+    @apply flex flex-row space-x-2 mt-[0.5em] tablet:justify-center 
+    laptop:justify-start tablet:w-[100%];
   }
 
   .about-section { 
@@ -138,7 +151,8 @@
   }
 
   .about-header { 
-    @apply animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium tablet:text-[3em] laptop:text-[4em] tablet:text-center;
+    @apply animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium tablet:text-[3em] laptop:text-[4em] tablet:text-center
+    laptop:mt-[5rem] tablet:mt-[1em];
   }
 
   .about-body { 
@@ -198,6 +212,28 @@
     @apply 
     mb-[1em]
     scroll-m-[5rem];
+  }
+
+  .footer {
+    @apply bottom-0 relative bg-lightbgColour dark:bg-bgColour2 h-[150px] w-[100%] shadow-inner
+    pb-[2em];
+  }
+
+  .footer-header { 
+    @apply 
+    pt-[1em]
+    text-darkFont dark:text-lightFont1 
+    text-center
+    font-light
+    text-[1.7rem];
+  }
+
+  .footer-subheader { 
+    @apply 
+    text-darkFont dark:text-lightFont1 
+    text-center
+    font-light
+    pt-[1em];
   }
 
 }

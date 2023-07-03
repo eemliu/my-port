@@ -1,14 +1,11 @@
 import React from 'react'
 import { TypeAnimation } from 'react-type-animation';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import EmailIcon from '@mui/icons-material/Email';
-import IconButton from '@mui/material/IconButton';
 import blob from '../assets/blobs-1.png'
 import portrait from '../assets/photo.jpeg'
 import ProjectCard from '../components/ProjectCard';
 import weemi from '../assets/weemi.png'
 import travel from '../assets/travel.png'
+import ContactButtons from '../components/ContactButtons';
 
 const Landing = () => {
   const callback = function (entries) {
@@ -45,30 +42,26 @@ const Landing = () => {
             </div>
           </div>
           
-          <h1 className='landing-subHeader show-on-scroll'>Aspiring UX Engineer &#183; Design Enthusiast</h1>
+          <div className='landing-subHeader show-on-scroll'>
+          <p className='break-normal'>
+            <span className='landing-subHeader-hover'>Aspiring UX Engineer</span>
+            <span> &#183; </span>
+            <span 
+            className='landing-subHeader-hover'>Design Enthusiast</span>
+          </p>
+          
+          </div>
+          {/* <h1 className='landing-subHeader show-on-scroll'>  </h1> */}
           <h1 className='landing-body show-on-scroll'>I'm a penultimate student studying B.Computer Science/B.Commerce student at <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary' href="https://www.linkedin.com/school/unsw/?originalSubdomain=au"
           target="_blank">UNSW</a>. I'm passionate about <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary whitespace-pre-wrap'
-          href="#">front-end web-dev</a> and <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary' href="">UI/UX design</a> and am constantly driven to experiment with new technologies to create beautiful, seamless applications!
+          href="#">front-end web-dev</a> and <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary' href="#">UI/UX design</a> and am constantly driven to experiment with new technologies to create beautiful, seamless applications!
           </h1>
           
           <h1 className='get-in-touch show-on-scroll'>Get in touch!</h1>
-          <div className='buttons-container show-on-scroll'>
-            <a href='https://www.linkedin.com/in/emily-liu-28b040229/' target="_blank">
-              <LinkedInIcon className='get-in-touch-buttons'
-              fontSize='large'
-              />
-            </a>
-            <a href='https://github.com/eemliu' target="_blank">
-              <GitHubIcon className='get-in-touch-buttons'
-              fontSize='large'/>
-            </a>
-            <a href="mailto: emilyliu496@gmail.com" target="_blank">
-              <EmailIcon className='get-in-touch-buttons'
-              fontSize='large'/>
-            </a>
+          <div className='show-on-scroll'>
+            <ContactButtons/>
           </div>
         </section>
-        <h1>sdf</h1>
         <section className='about-section show-on-scroll' id='About'>
           <h1 className='about-header'>/ about-me</h1>
           <div className='about-body'>
@@ -85,7 +78,7 @@ const Landing = () => {
           </div>
         </section>
 
-        <section className='projects-section  show-on-scroll' id='Projects'>
+        <section className='projects-section hidden show-on-scroll' id='Projects'>
           <h1 className='animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium tablet:text-[3em] laptop:text-[4em] tablet:text-center'>/ projects</h1>
           <div className='proj-body'>
             <ProjectCard source={weemi} header='Weemi'/>

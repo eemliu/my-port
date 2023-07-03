@@ -18,7 +18,7 @@ const Navbar = () => {
   }
 
   useEffect(() => { 
-      initialiseDarkMode(isDarkMode, setIsDarkMode);
+      initialiseDarkMode(setIsDarkMode);
   }, []);
 
   return (

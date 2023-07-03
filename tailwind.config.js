@@ -9,8 +9,8 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'tablet': {'min':'0px', 'max': '800px'},
-      'laptop': '800px',
+      'tablet': {'min':'0px', 'max': '850px'},
+      'laptop': '850px',
       'desktop':'1000px'
     },
     extend: {
@@ -22,7 +22,8 @@ module.exports = {
         lightFont1: '#CCD6F6',
         lightFont2: '#8892AF',
         darkFont2: '#435E6E',
-        primary: '#14B8A6'
+        primary: '#14B8A6', 
+        secondaryBlue: '#5487DE',
       },
       keyframes: {
         typing: {
