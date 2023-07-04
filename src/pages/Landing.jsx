@@ -1,11 +1,13 @@
-import { React, useRef } from 'react'
+import { React, useRef } from 'react';
+import { Context, useContext } from '../context';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import portrait from '../assets/photo.jpeg'
 import ProjectCard from '../components/ProjectCard';
 import weemi from '../assets/weemi.png'
 import travel from '../assets/travel.png'
-import blobs from '../assets/blobs-1.png'
+import lightBlobs from '../assets/blobs-1.png'
+import darkBlobs from '../assets/blobs-2.png'
 import ContactButtons from '../components/ContactButtons';
 import resume from '../assets/resume-2023.pdf'
 
@@ -40,12 +42,15 @@ const Landing = () => {
       behavior: 'smooth',
     });
   };
+  const { getters } = useContext(Context);
+  const [isDarkMode] = [getters.isDarkMode];
+  
   return (
     <div>
       <Navbar scrollDown={scrollDown}></Navbar>
       <div className='default-page-styling'>
           <div className='landing-layout1'>
-            <div className='flex flex-col'>
+            <div className='flex flex-col h-[100%]'>
               <section className='landing-section show-on-scroll' ref={Landing} id='Home'>
                 <h1 className='landing-header'>
                   Hi there, I'm</h1>
@@ -86,8 +91,10 @@ const Landing = () => {
             </div>
             <div>
               <img 
-              className='blob-monster'
-              src={blobs} alt="" />
+              className='blob-monster 
+              object-scale-down h-[45em] w-[100em]
+              tablet:hidden transition-all duration-300'
+              src={isDarkMode ? darkBlobs : lightBlobs} alt="" />
             </div>
           </div>
 

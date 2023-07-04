@@ -45,7 +45,7 @@
     @apply 
     flex flex-col 
     items-center 
-    laptop:pt-[12em] tablet:pt-[9em]
+    laptop:pt-[11em] tablet:pt-[9em]
     bg-lightbgColour dark:bg-bgColour1 transition-colors duration-300;
   }
 
@@ -57,14 +57,14 @@
     pb-3 font-semibold 
     text-[darkFont] leading-[1.05em] text-[10em] 
     tracking-wide 
-    bg-teal-500 
+    bg-teal-400 
     dark:text-lightFont1 dark:border-r-lightFont1
     bg-opacity-20 dark:bg-opacity-80
     tablet:text-[7em] tablet:justify-center;
   }
 
   .landing-layout1 { 
-    @apply flex flex-row gap-10
+    @apply flex flex-row 
     laptop:justify-start laptop:ml-[15%] 
     tablet:justify-center tablet:items-end tablet:mr-[20%] tablet:ml-[20%];
   }
@@ -122,10 +122,12 @@
     @apply 
     mb-[1em] font-light
     dark:text-lightFont2 text-darkFont2
-    text-opacity-70 text-[1.3em]
+    text-opacity-70 
+    leading-relaxed
     tablet:text-center 
     tablet:text-[1.1em]
-    laptop:w-[60%];
+    laptop:text-[1.3em]
+    laptop:w-[80%];
   }
 
   .contact-buttons { 
@@ -151,7 +153,7 @@
   }
 
   .blob-monster { 
-    
+    @apply relative;
   }
 
   .about-section { 
