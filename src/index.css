@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components { 
+  * { 
+    @apply scroll-smooth;
+  }
+
   .navbar-desktop { 
     @apply 
     flex flex-row fixed justify-between
@@ -59,6 +63,12 @@
     tablet:text-[7em] tablet:justify-center;
   }
 
+  .landing-layout1 { 
+    @apply flex flex-row gap-10
+    laptop:justify-start laptop:ml-[15%] 
+    tablet:justify-center tablet:items-end tablet:mr-[20%] tablet:ml-[20%];
+  }
+
   .landing-layout { 
     @apply flex flex-col
     laptop:justify-start laptop:ml-[15%] laptop:mr-[20%] 
@@ -103,6 +113,7 @@
     hover:pb-[0.5rem]
     hover:text-[#3F78DA]
     dark:hover:text-[#7FA5E6]
+    hover:cursor-pointer
     transition-all
     duration-150;
   }
@@ -117,37 +128,37 @@
     laptop:w-[60%];
   }
 
-  .get-in-touch {
+  .contact-buttons { 
     @apply 
-    w-[100%] 
-    tablet:mb-[0.5em] 
-    laptop:mb-[0.5em]
-    dark:text-lightFont2 text-darkFont2 text-opacity-70 text-[1.7em] 
-    tablet:justify-center
-    tablet:items-center
-    tablet:text-center
-    tablet:text-[1.4em]
-    hover:text-primary
-    hover:cursor-pointer
-    dark:hover:text-primary;
+    font-normal
+    tablet:text-xl
+    laptop:text-2xl
+    bg-secondaryBlue
+    bg-opacity-40 
+    text-[#3F78DA]
+    dark:text-[#7FA5E6]
+    pr-[0.5rem]
+    pl-[0.5rem]
+    pt-[0.5rem]
+    pb-[0.5rem]
+    tablet:w-[9.5rem]
+    /* tablet:w-[50%] */
+    laptop:w-[30%]
+    rounded-lg
+    hover:bg-opacity-25
+    transition-all
+    duration-150;
   }
 
-  .get-in-touch-buttons { 
-    @apply dark:text-lightFont2 text-darkFont2 w-[10em] 
-    hover:text-primary dark:hover:text-primary 
-    transition-all duration-300;
-  }
-
-  .buttons-container { 
-    @apply flex flex-row space-x-2 mt-[0.5em] tablet:justify-center 
-    laptop:justify-start tablet:w-[100%];
+  .blob-monster { 
+    
   }
 
   .about-section { 
     @apply 
     flex flex-col 
     scroll-m-[5rem]
-    mb-[1em];
+    mb-[3em];
   }
 
   .about-header { 
@@ -210,6 +221,8 @@
 
   .blog-section { 
     @apply 
+    /* flex flex-col */
+    hidden
     mb-[1em]
     scroll-m-[5rem];
   }
@@ -221,11 +234,23 @@
 
   .footer-header { 
     @apply 
-    pt-[1em]
     text-darkFont dark:text-lightFont1 
     text-center
-    font-light
-    text-[1.7rem];
+    font-normal
+    text-[2rem];
+  }
+
+  .footer-buttons-container { 
+    @apply flex flex-row 
+    space-x-3 mt-[0.5em] 
+    justify-center 
+    w-[100%];
+  }
+
+  .get-in-touch-buttons { 
+    @apply dark:text-lightFont2 text-darkFont2 w-[10em] 
+    hover:text-primary dark:hover:text-primary 
+    transition-all duration-300;
   }
 
   .footer-subheader { 
@@ -233,7 +258,7 @@
     text-darkFont dark:text-lightFont1 
     text-center
     font-light
-    pt-[1em];
+    pt-[1.5em];
   }
 
 }

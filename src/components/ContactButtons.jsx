@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 
 const ContactButtons = () => {
   return (
-    <div className='buttons-container'>
+    <div className='footer-buttons-container'>
         <a href='https://www.linkedin.com/in/emily-liu-28b040229/' target="_blank">
             <LinkedInIcon className='get-in-touch-buttons'
             fontSize='large'
