@@ -10,16 +10,20 @@
   .navbar-desktop { 
     @apply 
     flex flex-row fixed justify-between
-    top-0 w-full h-20 
+    top-0 w-full h-[5rem] 
     m-0 pr-6 pt-1  
     bg-lightbgColour dark:bg-bgColour2
     transition-colors duration-300
-    shadow-md
+    laptop:shadow-md
+    tablet:bg-gradient-to-b
+    tablet:from-lightbgColour tablet:to-[#D5EFED]
+    tablet:dark:from-bgColour2 tablet:dark:to-[#51C1B5]
     z-10;
   }
 
   .nav-tabs { 
-    @apply flex flex-row ml-3 mr-3
+    @apply 
+    flex flex-row ml-3 mr-3
     py-1 border-b-2 pb-3 text-darkFont dark:text-lightFont1 
     transition-colors duration-300
     hover:text-teal-500
@@ -45,8 +49,11 @@
     @apply 
     flex flex-col 
     items-center 
-    laptop:pt-[11em] tablet:pt-[9em]
-    bg-lightbgColour dark:bg-bgColour1 transition-colors duration-300;
+    pb-[2rem]
+    laptop:pt-[11em] 
+    /* tablet:pt-[9em] */
+    bg-lightbgColour dark:bg-bgColour1 
+    transition-colors duration-300;
   }
 
   .typing-text { 
@@ -60,7 +67,8 @@
     bg-teal-400 
     dark:text-lightFont1 dark:border-r-lightFont1
     bg-opacity-20 dark:bg-opacity-80
-    tablet:text-[7em] tablet:justify-center;
+    tablet:text-[7em] tablet:justify-center
+    transition-all duration-300;
   }
 
   .landing-layout1 { 
@@ -85,6 +93,7 @@
     tablet:justify-center
     tablet:text-[2.5em] 
     laptop:text-[3em] 
+    laptop:pt-[0.5em]
     dark:text-[#CCD6F6] transition-all 
     duration-100 
     font-light;
@@ -103,19 +112,21 @@
 
   .landing-subHeader-hover {
     @apply 
-    hover:bg-secondaryBlue
-    hover:h-[10em]
-    hover:bg-opacity-40 
-    hover:rounded-lg
-    hover:pr-[0.5rem]
-    hover:pl-[0.5rem]
-    hover:pt-[0.5rem]
-    hover:pb-[0.5rem]
-    hover:text-[#3F78DA]
-    dark:hover:text-[#7FA5E6]
+  bg-secondaryBlue
+    h-[10em]
+    bg-opacity-40 
+    rounded-lg
+    pr-[0.5rem]
+    pl-[0.5rem]
+    pt-[0.5rem]
+    pb-[0.5rem]
+    text-[#3F78DA]
+    dark:text-[#7FA5E6]
     hover:cursor-pointer
+    mr-[0.5em]
     transition-all
-    duration-150;
+    duration-150
+    whitespace-nowrap;
   }
 
   .landing-body { 
@@ -135,17 +146,21 @@
     font-normal
     tablet:text-xl
     laptop:text-2xl
-    bg-secondaryBlue
+    bg-inherit
+    bg-slate-200
     bg-opacity-40 
-    text-[#3F78DA]
-    dark:text-[#7FA5E6]
+    hover:bg-secondaryBlue
+    text-slate-500
+    dark:text-slate-100
+    hover:text-[#3F78DA]
+    dark:hover:text-[#7FA5E6]
     pr-[0.5rem]
     pl-[0.5rem]
     pt-[0.5rem]
     pb-[0.5rem]
     tablet:w-[9.5rem]
     /* tablet:w-[50%] */
-    laptop:w-[30%]
+    laptop:w-[11rem]
     rounded-lg
     hover:bg-opacity-25
     transition-all
@@ -153,7 +168,28 @@
   }
 
   .blob-monster { 
-    @apply relative;
+    @apply 
+    block
+    blob-screen:hidden 
+    laptop:object-cover laptop:h-[100%] laptop:w-[100%]
+    /* monitor:object-cover monitor:h-[100%] monitor:w-[80em] */
+    transition-all duration-300;
+  }
+
+  .eye { 
+    @apply relative ;
+  } 
+
+ .eyeball1 { 
+    @apply
+    object-fill 
+    absolute top-[30px] left-[-425px] ;
+  }  
+
+  .eyeball2 {
+    @apply
+    object-fill 
+    absolute top-[182px] right-[264px];
   }
 
   .about-section { 
@@ -165,7 +201,7 @@
 
   .about-header { 
     @apply animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium tablet:text-[3em] laptop:text-[4em] tablet:text-center
-    laptop:mt-[5rem] tablet:mt-[1em];
+    laptop:mt-[1em] desktop:mt-[1em] tablet:mt-[1em];
   }
 
   .about-body { 
@@ -230,29 +266,48 @@
   }
 
   .footer {
-    @apply bottom-0 relative bg-lightbgColour dark:bg-bgColour2 h-[150px] w-[100%] shadow-inner
+    @apply bottom-0 relative bg-gradient-to-t
+    from-lightbgColour to-[#D5EFED]
+    dark:from-bgColour2 dark:to-[#51C1B5]
+    h-[150px] w-[100%] 
+    /* shadow-inner */
     pb-[2em];
   }
 
-  .footer-header { 
+  /* .footer-header { 
     @apply 
     text-darkFont dark:text-lightFont1 
     text-center
     font-normal
-    text-[2rem];
-  }
+    tablet:text-[2rem]
+    laptop:text-[3rem]
+    transition-all
+    duration-300;
+  } */
 
   .footer-buttons-container { 
     @apply flex flex-row 
-    space-x-3 mt-[0.5em] 
+    space-x-3 pt-[1em] 
     justify-center 
     w-[100%];
   }
 
-  .get-in-touch-buttons { 
-    @apply dark:text-lightFont2 text-darkFont2 w-[10em] 
-    hover:text-primary dark:hover:text-primary 
+  .get-in-touch { 
+    @apply dark:text-lightFont1 text-darkFont2
+    /* dark:hover:bg-opacity-40
+    hover:text-primary dark:hover:text-primary  */
     transition-all duration-300;
+  }
+
+  .get-in-touch-hover {
+    @apply 
+    pr-[0.4em] pt-[0.4em] pl-[0.4em] pb-[0.4em]
+    rounded-md
+    hover:bg-opacity-40
+   dark:hover:bg-secondaryBlue
+   hover:bg-primary 
+    hover:cursor-pointer
+    transition-all duration-100;
   }
 
   .footer-subheader { 
@@ -260,7 +315,7 @@
     text-darkFont dark:text-lightFont1 
     text-center
     font-light
-    pt-[1.5em];
+    pt-[0.7rem];
   }
 
 }

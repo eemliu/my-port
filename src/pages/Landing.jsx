@@ -8,10 +8,20 @@ import weemi from '../assets/weemi.png'
 import travel from '../assets/travel.png'
 import lightBlobs from '../assets/blobs-1.png'
 import darkBlobs from '../assets/blobs-2.png'
+import lightBlobChild from '../assets/blobs-1-contracted.png'
+import darkBlobChild from '../assets/blobs-2-contracted.png'
+import eye from '../assets/eye.png'
 import ContactButtons from '../components/ContactButtons';
 import resume from '../assets/resume-2023.pdf'
+import footerDark from '../assets/footer-dark.png'
+import footerLight from '../assets/footer-light.png'
+import headerDark from '../assets/header-dark.png'
+import headerLight from '../assets/header-light.png'
 
 const Landing = () => {
+  const { getters } = useContext(Context);
+  const [isDarkMode] = [getters.isDarkMode];
+
   // Scroll content into view 
   const callback = function (entries) {
     entries.forEach((entry) => {
@@ -42,15 +52,39 @@ const Landing = () => {
       behavior: 'smooth',
     });
   };
-  const { getters } = useContext(Context);
-  const [isDarkMode] = [getters.isDarkMode];
   
+  // Moving eyeballs
+  document.addEventListener('mousemove', (e) => {
+    // console.log(e);
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    const anchor = document.getElementById('anchor');
+    const rect = anchor.getBoundingClientRect();
+    const anchorX = rect.left + rect.width / 2;
+    const anchorY = rect.top + rect.height / 2;
+
+    const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
+    const eyes = document.querySelectorAll('.eye')
+    eyes.forEach(eye => {
+      eye.style.transform = `rotate(${90 + angleDeg}deg)`;
+    })
+  }) 
+
+  function angle(cx, cy, ex, ey) {
+    const dy = ey - cy; 
+    const dx = ex - cx;
+    const rad = Math.atan2(dy, dx);
+    const deg = rad * 180 / Math.PI; 
+    return deg;
+  }
+
   return (
     <div>
       <Navbar scrollDown={scrollDown}></Navbar>
+      <img src={isDarkMode ? headerDark : headerLight} className='pt-[4.9rem] laptop:hidden' alt="" />
       <div className='default-page-styling'>
           <div className='landing-layout1'>
-            <div className='flex flex-col h-[100%]'>
+            <div className='flex flex-col h-[100%] w-[100%]'>
               <section className='landing-section show-on-scroll' ref={Landing} id='Home'>
                 <h1 className='landing-header'>
                   Hi there, I'm</h1>
@@ -65,13 +99,15 @@ const Landing = () => {
                     <span
                     className='landing-subHeader-hover'
                     onClick={() => {console.log('ji')}}>Aspiring UX Engineer</span>
-                    <span> &#183; </span>
+                    {/* <span> &#183; </span> */}
                     <span
                     className='landing-subHeader-hover'>Design Enthusiast</span>
+                    <span
+                    className='landing-subHeader-hover'>Student</span>
                   </p>
                 </div>
                 <h1 className='landing-body show-on-scroll'>I'm a penultimate student studying B.Computer Science/B.Commerce student at <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary' href="https://www.linkedin.com/school/unsw/?originalSubdomain=au"
-                target="_blank">UNSW</a>. I'm passionate about <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary whitespace-pre-wrap'
+                target="_blank">UNSW</a>. I'm passionate about <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary whitespace-nowrap'
                 href="#">front-end web-dev</a> and <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary' href="#">UI/UX design</a> and am constantly driven to experiment with new technologies to create beautiful, seamless applications!
                 </h1>
                 <div className='flex flex-row gap-4 tablet:justify-center laptop:justify-start
@@ -89,12 +125,23 @@ const Landing = () => {
                 </div> */}
               </section>
             </div>
-            <div>
-              <img 
-              className='blob-monster 
-              object-scale-down h-[45em] w-[100em]
-              tablet:hidden transition-all duration-300'
-              src={isDarkMode ? darkBlobs : lightBlobs} alt="" />
+            <picture>
+              <source 
+              media='(min-width: 1000px) and (max-width: 1230px)' 
+              srcSet={isDarkMode ? darkBlobChild : lightBlobChild}
+              id='anchor'/>
+              <img
+              className='blob-monster '
+              src={isDarkMode ? darkBlobs : lightBlobs} alt="" 
+              id='anchor'/>
+            </picture>
+            <div className='eyes'>
+              <div className='eye'>
+                <img className='eyeball1' src={eye} alt="" />
+              </div>
+              <div className='eye'>
+                <img className='eyeball2' src={eye} alt="" />
+              </div>
             </div>
           </div>
 
@@ -134,6 +181,7 @@ const Landing = () => {
           </section>
         </div>
       </div>
+      <img src={isDarkMode ? footerDark : footerLight} alt="" />
       <div ref={footer}>
         <Footer></Footer>
       </div>

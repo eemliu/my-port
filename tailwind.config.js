@@ -11,16 +11,18 @@ module.exports = {
     screens: {
       'tablet': {'min':'0px', 'max': '850px'},
       'laptop': '850px',
-      'desktop':'1000px'
+      'blob-small': '1000px',
+      'desktop':'1140px', 
+      'monitor': '1230px',
     },
     extend: {
       colors: { 
         bgColour1: '#0A1930', 
         bgColour2: '#0B1B36', 
         lightbgColour:'#FAFDFF',
-        darkFont: '#001220',
         lightFont1: '#CCD6F6',
         lightFont2: '#8892AF',
+        darkFont: '#001220',
         darkFont2: '#435E6E',
         primary: '#14B8A6', 
         secondaryBlue: '#5487DE',
