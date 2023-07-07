@@ -15,7 +15,10 @@
     right-5
     z-50
     cursor-pointer
-    overflow-y-scroll;
+    overflow-y-scroll
+    hover:scale-125
+    transition-all
+    duration-150;
   }
 
   .navbar-desktop { 
@@ -92,8 +95,10 @@
 
   .landing-layout { 
     @apply flex flex-col
-    laptop:justify-start laptop:ml-[15%] laptop:mr-[20%] 
-    tablet:justify-center tablet:items-end tablet:mr-[20%] tablet:ml-[20%];
+    laptop:justify-start 
+    laptop:ml-[15%] 
+    /* laptop:mr-[10%]  */
+    tablet:justify-center tablet:items-end tablet:mr-[10%] tablet:ml-[10%];
   }
 
   .landing-section { 
@@ -167,6 +172,7 @@
     dark:text-slate-100
     hover:text-[#3F78DA]
     dark:hover:text-[#7FA5E6]
+    hover:scale-110
     pr-[0.5rem]
     pl-[0.5rem]
     pt-[0.5rem]
@@ -184,6 +190,7 @@
     @apply 
     block
     tablet:hidden
+    blob-small:hidden
     laptop:object-cover laptop:h-[100%] laptop:w-[100%]
     monitor:object-cover monitor:h-[100%] monitor:w-[100em]
     transition-all duration-300;
@@ -218,9 +225,23 @@
   }
 
   .about-body { 
-    @apply 
-    flex tablet:flex-col laptop:flex-col desktop:flex-row
+    @apply flex gap-5 justify-between
+    tablet:flex-col laptop:flex-row desktop:flex-row
     mt-[0.5em] dark:text-lightFont2 text-darkFont2 tablet:text-center tablet:items-center laptop:text-[1.3em];
+  }
+
+  .about-content {
+    @apply 
+    tablet:w-[70%]
+    laptop:w-[50%];
+  }
+
+  .portrait { 
+    @apply 
+    rounded-full object-cover 
+    h-[20em] w-[20em] 
+    tablet:mt-[1em]
+    laptop:mr-[5%];
   }
 
   .projects-section { 
@@ -320,6 +341,7 @@
    dark:hover:bg-secondaryBlue
    hover:bg-primary 
     hover:cursor-pointer
+    hover:scale-110
     transition-all duration-100;
   }
 

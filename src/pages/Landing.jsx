@@ -157,7 +157,7 @@ const Landing = () => {
           <section className='about-section show-on-scroll' id='About' ref={About}>
             <h1 className='about-header'>/ about-me</h1>
             <div className='about-body'>
-              <p>
+              <p className='about-content'>
                 Hi I'm Emily! Welcome to my page :)
                 <br />
                 I'm currently 3rd year Computer Science/Commerce student studying at UNSW, though I actually spent my first year at uni studying Vision Science and Clinical Optometry!
@@ -165,8 +165,8 @@ const Landing = () => {
                 <br />
                 In my spare time, you can catch me rewatching <a href="" className='link-decor dark:text-[#E0E0E0] text-darkFont2'>AOT</a> for the 120398th time, finding cool new places to eat in Sydney or revamping my <a className='link-decor dark:text-[#E0E0E0] text-darkFont2' href="https://open.spotify.com/user/emilyyy496?si=dcf0986a334f4ee">Spotify</a> playlists!
               </p>
-              <br />
-              <img className='rounded-full object-cover tablet:h-[15em] tablet:w-[15em] laptop:h-[15em] laptop:w-[15em]' src={portrait} alt="" />
+              <img className='portrait' src={portrait} alt="" />
+              {/* <div className='bg-slate-700 h-[50px] w-[50px]'></div> */}
             </div>
           </section>
           <section className='projects-section hidden show-on-scroll' id='Projects'>
