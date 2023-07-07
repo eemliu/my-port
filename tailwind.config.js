@@ -11,7 +11,7 @@ module.exports = {
     screens: {
       'tablet': {'min':'0px', 'max': '850px'},
       'laptop': '850px',
-      'blob-small': '1000px',
+      'blob-small': {'min':'850px', 'max': '1000px'},
       'desktop':'1140px', 
       'monitor': '1230px',
     },

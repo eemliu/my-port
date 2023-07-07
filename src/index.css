@@ -7,9 +7,22 @@
     @apply scroll-smooth;
   }
 
+  .scroll-up { 
+    @apply 
+    h-[5em]
+    fixed 
+    bottom-10
+    right-5
+    z-50
+    cursor-pointer
+    overflow-y-scroll;
+  }
+
   .navbar-desktop { 
     @apply 
-    flex flex-row fixed justify-between
+    flex flex-row 
+    tablet:absolute
+    fixed justify-between
     top-0 w-full h-[5rem] 
     m-0 pr-6 pt-1  
     bg-lightbgColour dark:bg-bgColour2
@@ -170,9 +183,9 @@
   .blob-monster { 
     @apply 
     block
-    blob-screen:hidden 
+    tablet:hidden
     laptop:object-cover laptop:h-[100%] laptop:w-[100%]
-    /* monitor:object-cover monitor:h-[100%] monitor:w-[80em] */
+    monitor:object-cover monitor:h-[100%] monitor:w-[100em]
     transition-all duration-300;
   }
 

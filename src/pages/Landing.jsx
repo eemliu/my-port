@@ -10,6 +10,8 @@ import lightBlobs from '../assets/blobs-1.png'
 import darkBlobs from '../assets/blobs-2.png'
 import lightBlobChild from '../assets/blobs-1-contracted.png'
 import darkBlobChild from '../assets/blobs-2-contracted.png'
+import lightBlobSmall from '../assets/blobs-1-vcontracted.png'
+import darkBlobsSmall from '../assets/blobs-2-vcontracted.png'
 import eye from '../assets/eye.png'
 import ContactButtons from '../components/ContactButtons';
 import resume from '../assets/resume-2023.pdf'
@@ -17,6 +19,7 @@ import footerDark from '../assets/footer-dark.png'
 import footerLight from '../assets/footer-light.png'
 import headerDark from '../assets/header-dark.png'
 import headerLight from '../assets/header-light.png'
+import ScrollToTop from '../components/ScrollToTop'
 
 const Landing = () => {
   const { getters } = useContext(Context);
@@ -80,8 +83,9 @@ const Landing = () => {
 
   return (
     <div>
+      <ScrollToTop></ScrollToTop>
       <Navbar scrollDown={scrollDown}></Navbar>
-      <img src={isDarkMode ? headerDark : headerLight} className='pt-[4.9rem] laptop:hidden' alt="" />
+      <img src={isDarkMode ? headerDark : headerLight} className='pt-[4.9rem] relative laptop:hidden' alt="" />
       <div className='default-page-styling'>
           <div className='landing-layout1'>
             <div className='flex flex-col h-[100%] w-[100%]'>
@@ -127,8 +131,12 @@ const Landing = () => {
             </div>
             <picture>
               <source 
-              media='(min-width: 1000px) and (max-width: 1230px)' 
+              media='(min-width: 1000px) and (max-width: 1240px)' 
               srcSet={isDarkMode ? darkBlobChild : lightBlobChild}
+              id='anchor'/>
+              <source 
+              media='(min-width: 850px) and (max-width: 1000px)' 
+              srcSet={isDarkMode ? darkBlobsSmall : lightBlobSmall}
               id='anchor'/>
               <img
               className='blob-monster '
