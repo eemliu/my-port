@@ -11,7 +11,7 @@
     @apply 
     h-[5em]
     fixed 
-    bottom-10
+    bottom-16
     right-5
     z-50
     cursor-pointer
@@ -72,21 +72,6 @@
     transition-colors duration-300;
   }
 
-  .typing-text { 
-    @apply 
-    animate-typing 
-    overflow-hidden m-auto whitespace-nowrap 
-    border-r-4 border-r-black 
-    pb-3 font-semibold 
-    text-[darkFont] leading-[1.05em] text-[10em] 
-    tracking-wide 
-    bg-teal-400 
-    dark:text-lightFont1 dark:border-r-lightFont1
-    bg-opacity-20 dark:bg-opacity-80
-    tablet:text-[7em] tablet:justify-center
-    transition-all duration-300;
-  }
-
   .landing-layout1 { 
     @apply flex flex-row 
     laptop:justify-start laptop:ml-[15%] 
@@ -106,26 +91,57 @@
     scroll-m-[12rem];
   }
 
+  .landing-content-container { 
+    @apply 
+    flex flex-col 
+    h-[100%] w-[100%]
+    large-monitor:mt-[5em];
+  }
+
   .landing-header { 
     @apply w-[100%] flex 
     tablet:justify-center
     tablet:text-[2.5em] 
     laptop:text-[3em] 
+    large-monitor:text-[3.5em]
     laptop:pt-[0.5em]
     dark:text-[#CCD6F6] transition-all 
-    duration-100 
+    duration-300 
     font-light;
+  }
+
+  .typing-text-container { 
+    @apply flex tablet:justify-center;
+  }
+  
+  .typing-text { 
+    @apply 
+    animate-typing 
+    overflow-hidden m-auto whitespace-nowrap 
+    border-r-4 border-r-black 
+    pb-3 font-semibold 
+    text-[darkFont] leading-[1.05em] 
+    tracking-wide 
+    bg-teal-400 
+    dark:text-lightFont1 dark:border-r-lightFont1
+    bg-opacity-20 dark:bg-opacity-80
+    tablet:text-[7em] laptop:text-[10em] 
+    large-monitor:text-[12em]
+    tablet:justify-center
+    transition-all duration-300;
   }
 
   .landing-subHeader {
     @apply 
     w-[100%] 
     mt-[1em] mb-[1em] 
-    dark:text-lightFont2 text-darkFont2 text-opacity-70 text-[1.5em] 
+    dark:text-lightFont2 text-darkFont2 text-opacity-70  
     tablet:justify-center
     tablet:items-center
     tablet:text-center
-    tablet:text-[1.2em];
+    tablet:text-[1.2em]
+    laptop:text-[1.5em]
+    large-monitor:text-[1.8em];
   }
 
   .landing-subHeader-hover {
@@ -156,7 +172,7 @@
     tablet:text-center 
     tablet:text-[1.1em]
     laptop:text-[1.3em]
-    laptop:w-[80%];
+    large-monitor:text-[1.7em];
   }
 
   .contact-buttons { 
@@ -180,6 +196,7 @@
     tablet:w-[9.5rem]
     /* tablet:w-[50%] */
     laptop:w-[11rem]
+    large-monitor:w-[13.5rem]
     rounded-lg
     hover:bg-opacity-25
     transition-all
@@ -196,7 +213,7 @@
     transition-all duration-300;
   }
 
-  .eye { 
+  /* .eye { 
     @apply relative ;
   } 
 
@@ -210,7 +227,7 @@
     @apply
     object-fill 
     absolute top-[182px] right-[264px];
-  }
+  } */
 
   .about-section { 
     @apply 
@@ -218,20 +235,47 @@
     scroll-m-[5rem]
     mb-[3em];
   }
+  .about-header-section {
+    @apply flex flex-row gap-4;
+  }
 
   .about-header { 
-    @apply animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium tablet:text-[3em] laptop:text-[4em] tablet:text-center
-    laptop:mt-[1em] desktop:mt-[1em] tablet:mt-[1em];
+    @apply 
+    tablet:w-[100%]
+    flex flex-row
+    animate-character dark:text-[#FAFDFF] text-darkFont2 font-medium  tablet:text-center
+    mt-[1em]
+    tablet:text-[3em] 
+    laptop:text-[4em] 
+    large-monitor:text-[6em];
+  }
+
+  .section-line { 
+    @apply
+    relative 
+    top-[7rem]
+    large-monitor:top-[10.5rem]
+    bg-gradient-to-l
+    from-primary
+    to-secondaryBlue
+    bg-opacity-20
+    laptop:h-[0.1rem]
+    desktop:h-[0.2rem]
+    w-[20vw]
+    rounded-lg;
   }
 
   .about-body { 
     @apply flex gap-5 justify-between
-    tablet:flex-col laptop:flex-row desktop:flex-row
-    mt-[0.5em] dark:text-lightFont2 text-darkFont2 tablet:text-center tablet:items-center laptop:text-[1.3em];
+    tablet:flex-col laptop:flex-row 
+    mt-[0.5em] dark:text-lightFont2 text-darkFont2 
+    tablet:text-center tablet:items-center 
+    laptop:text-[1.3em];
   }
 
   .about-content {
     @apply 
+    whitespace-pre-line
     tablet:w-[70%]
     laptop:w-[50%];
   }
@@ -239,9 +283,12 @@
   .portrait { 
     @apply 
     rounded-full object-cover 
+    laptop:h-[15em] laptop:w-[15em]
+    small-desktop:h-[20em] small-desktop:w-[20em]
     h-[20em] w-[20em] 
     tablet:mt-[1em]
-    laptop:mr-[5%];
+    laptop:mr-[5%]
+    transition-all duration-300;
   }
 
   .projects-section { 

@@ -88,13 +88,12 @@ const Landing = () => {
       <img src={isDarkMode ? headerDark : headerLight} className='pt-[4.9rem] relative laptop:hidden' alt="" />
       <div className='default-page-styling'>
           <div className='landing-layout1'>
-            <div className='flex flex-col h-[100%] w-[100%]'>
+            <div className='landing-content-container'>
               <section className='landing-section show-on-scroll' ref={Landing} id='Home'>
                 <h1 className='landing-header'>
                   Hi there, I'm</h1>
                 <div className="flex items-center justify-start tablet:justify-center w-[100%] show-on-scroll">
-                  <div className=" flex tablet:justify-center
-                  ">
+                 <div className="typing-text-container">
                   <h1 className="typing-text ">Emily!</h1>
                   </div>
                 </div>
@@ -110,9 +109,9 @@ const Landing = () => {
                     className='landing-subHeader-hover'>Student</span>
                   </p>
                 </div>
-                <h1 className='landing-body show-on-scroll'>I'm a penultimate student studying B.Computer Science/B.Commerce student at <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary' href="https://www.linkedin.com/school/unsw/?originalSubdomain=au"
-                target="_blank">UNSW</a>. I'm passionate about <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary whitespace-nowrap'
-                href="#">front-end web-dev</a> and <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 tablet:text-primary' href="#">UI/UX design</a> and am constantly driven to experiment with new technologies to create beautiful, seamless applications!
+                <h1 className='landing-body show-on-scroll'>I'm a penultimate student studying B.Computer Science/B.Commerce student at <a className='link-decor dark:text-[#E0E0E0] text-darkFont2' href="https://www.linkedin.com/school/unsw/?originalSubdomain=au"
+                target="_blank">UNSW</a>. I'm passionate about <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 whitespace-nowrap'
+                href="#">front-end web-dev</a> and <a className='link-decor dark:text-[#E0E0E0] text-darkFont2 whitespace-nowrap' href="#">UI/UX design</a> and am constantly driven to experiment with new technologies and refine my skills to create beautiful, seamless applications!
                 </h1>
                 <div className='flex flex-row gap-4 tablet:justify-center laptop:justify-start
                 mt-[1.5em]
@@ -143,27 +142,36 @@ const Landing = () => {
               src={isDarkMode ? darkBlobs : lightBlobs} alt="" 
               id='anchor'/>
             </picture>
-            <div className='eyes'>
+            {/* <div className='eyes'>
               <div className='eye'>
                 <img className='eyeball1' src={eye} alt="" />
               </div>
               <div className='eye'>
                 <img className='eyeball2' src={eye} alt="" />
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className='landing-layout'>
           <section className='about-section show-on-scroll' id='About' ref={About}>
-            <h1 className='about-header'>/ about-me</h1>
+            <div className='about-header-section'>
+              <h1 className='about-header'>/ about-me </h1>
+              <span className='tablet:hidden section-line'></span>
+            </div>
             <div className='about-body'>
               <p className='about-content'>
-                Hi I'm Emily! Welcome to my page :)
+                Hi I'm Emily - welcome to my portfolio website! I'm currently in my penultimate year of studying <a className='link-decor whitespace-nowrap' href="https://www.unsw.edu.au/study/undergraduate/bachelor-of-commerce-computer-science?studentType=Domestic" target='_blank'>B.Computer Science/B.Commerce</a> (Information Systems) at UNSW. 
+                <br /><br />
+                With a strong interest in UI/UX design, I recently discovered my affinity for frontend web development mid-2022. Ever since, I've been on an exciting journey of self-learning!
+                <br /><br />
+                I began with teaching myself HTML/CSS - from which, I made my first website! Since then, I've dedicated myself to honing my skills in web dev frameworks such as ReactJS to build dynamic and interactive web applications (such as this website &#9829;). 
+                <br /><br />
+                I've also worked with design frameworks and tools like Tailwind CSS and Figma to create aesthetic interfaces and merge creativity and functionality together!
+
+
                 <br />
-                I'm currently 3rd year Computer Science/Commerce student studying at UNSW, though I actually spent my first year at uni studying Vision Science and Clinical Optometry!
                 <br />
-                <br />
-                In my spare time, you can catch me rewatching <a href="" className='link-decor dark:text-[#E0E0E0] text-darkFont2'>AOT</a> for the 120398th time, finding cool new places to eat in Sydney or revamping my <a className='link-decor dark:text-[#E0E0E0] text-darkFont2' href="https://open.spotify.com/user/emilyyy496?si=dcf0986a334f4ee">Spotify</a> playlists!
+                In my spare time, you can catch me rewatching <a href="" className='link-decor dark:text-[#E0E0E0] text-darkFont2'>AOT</a> for the 120398th time, finding nice ramen places in Sydney or revamping my <a className='link-decor dark:text-[#E0E0E0] text-darkFont2' href="https://open.spotify.com/user/emilyyy496?si=dcf0986a334f4ee">Spotify</a> playlists!
               </p>
               <img className='portrait' src={portrait} alt="" />
               {/* <div className='bg-slate-700 h-[50px] w-[50px]'></div> */}

@@ -12,8 +12,10 @@ module.exports = {
       'tablet': {'min':'0px', 'max': '850px'},
       'laptop': '850px',
       'blob-small': {'min':'850px', 'max': '890px'},
+      'small-desktop': '1120px',
       'desktop':'1140px', 
       'monitor': '1230px',
+      'large-monitor': '1480px',
     },
     extend: {
       colors: { 
